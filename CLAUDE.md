@@ -48,6 +48,13 @@ Classes use `@injectable()` and `@inject(AppDependencies.Token)` decorators. Reg
 
 `AuthProvider` restores session on mount by calling `SignInUseCase.call()` with no params (tries localStorage token). During restoration, `isRestoringSession: true` causes the router to show a loading screen. The mock data source accepts `user@example.com` with any password — swap `MockAuthenticationDataSource` for `ApiAuthenticationDataSource` in `DataModule.ts` to use a real API.
 
+## Testing conventions
+
+### Unit tests
+
+- Test files live in a `__tests__/` directory next to the source files
+- Test file names must match the source file name: `Foo.ts` → `__tests__/Foo.test.ts`
+
 ## TypeScript config
 
 Strict mode enabled. Decorators enabled (`experimentalDecorators`, `emitDecoratorMetadata`). No unused locals/parameters allowed.
